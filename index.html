@@ -1,16 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-xl bg-white shadow-lg rounded-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h1 class="text-2xl font-bold text-gray-800">To-Do List</h1>
+        <span id="counter" class="badge bg-blue-100 text-blue-700"
+          >0 tugas</span
+        >
+      </div>
 
-    <link rel="style" href="css/style.css">
-</head>
-<body>
-    
+      <!-- Form Input -->
+      <form
+        id="todo-form"
+        class="grid grid-cols-1 md:grid-cols-3 gap-3 items-start"
+      >
+        <div class="md:col-span-2">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="Apa yang ingin kamu lakukan?"
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <div id="title-help" class="help-error hidden">
+            Judul tidak boleh kosong.
+          </div>
+        </div>
+        <div>
+          <input
+            id="todo-date"
+            type="date"
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <div id="date-help" class="help-error hidden">
+            Tanggal wajib diisi (>= hari ini).
+          </div>
+        </div>
+        <div class="md:col-span-3 flex gap-2">
+          <button
+            type="submit"
+            class="flex-1 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Tambah
+          </button>
+          <button
+            id="clear-done"
+            type="button"
+            class="bg-gray-100 px-4 py-2 rounded hover:bg-gray-200"
+          >
+            Clear Completed
+          </button>
+        </div>
+      </form>
 
+      <!-- Toolbar -->
+      <div
+        class="mt-4 flex flex-col md:flex-row gap-3 md:items-center md:justify-between"
+      >
+        <div class="inline-flex rounded-lg overflow-hidden">
+          <button class="tab active px-3 py-1" data-filter="all">Semua</button>
+          <button class="tab px-3 py-1" data-filter="active">Aktif</button>
+          <button class="tab px-3 py-1" data-filter="done">Selesai</button>
+        </div>
+        <input
+          id="filter-input"
+          type="text"
+          placeholder="Cari kegiatan..."
+          class="w-full md:w-64 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
 
-    <script rel="javascript" href="javascript/script.js"></script>
-</body>
+      <!-- List -->
+      <ul id="todo-list" class="mt-4 space-y-2"></ul>
+
+      <!-- Empty -->
+      <div id="empty" class="mt-6 hidden text-center text-gray-500">
+        Belum ada to-do. Tambahkan di atas.
+      </div>
+    </div>
+
+    <script src="javascript/script.js"></script>
+  </body>
 </html>

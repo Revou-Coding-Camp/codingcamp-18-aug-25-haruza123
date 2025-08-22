@@ -1,0 +1,12 @@
+.btn-delete { background: #ef4444; color:#fff; }
+.btn-delete:hover { background: #dc2626; }
+
+.input-error { border-color:#ef4444 !important; }
+.help-error { color:#ef4444; font-size:12px; margin-top:4px; }
+
+.tab { border:1px solid #e5e7eb; background:#fff; }
+.tab.active { background:#2563eb; color:#fff; border-color:#2563eb; }
+
+.badge { padding:2px 8px; border-radius:9999px; font-size:12px; }
+
+.line-through-soft { text-decoration: line-through; color:#6b7280; }
